@@ -12,29 +12,74 @@
 <body>
     <!-- Side Navigation -->
     <div class="sidenav">
-        <a href="section1">Section 1</a>
-        <a href="section2">Section 2</a>
-    </div>
-    <!-- Home Section -->
-    <section id="home">
-        <div class="title-group">
-            <div class="profile-image-container">
-                <img src="img/PXL_20220206_04131360.jpg" alt="Matheus Suzin">
+        <div class="personal-info">
+            <img src="img/mzsuzin.jpg" alt="Matheus Suzin">
+            <div class="text">
+                <h4>Matheus Suzin</h4>
+                <h4>Wannabe Dell Employee</h4>
             </div>
-            <h1>Matheus Suzin</h1>
         </div>
-    </section>
+        <a href="#section1">Project Explanation</a>
+        <a href="#section2">Images</a>
+        <a href="#section3">Code Snippet</a>
+    </div>
     <!-- Project Section -->
-    <section class="project">
-        <div id="section1" class="section">
-            <h2>Section 1</h2>
-            <p>Testing Testing</p>
-        </div>
-        <div id="section2" class="section">
-            <h2>Section 2</h2>
-            <p>Testing Testing</p>
-        </div>
-    </section>
+    <div class="project">
+
+        <!-- Section 1 -->
+        <section id="section1">
+            <h1>Project Explanation</h1>
+            <p>The Dell IT Academy is a selective process aimed at finding new employees to work at Dell. This particular process is taking place in south of Brazil, at Dell's facilities in El Dorado, Rio Grande do Sul.</p>
+            <p>The process consists of 3 main phases:
+                <ol>
+                    <li>Inscription</li>
+                    <li>Technical Challenge</li>
+                    <li>Interview</li>
+                </ol>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi facere optio alias doloribus nesciunt rerum dolore, et sit ipsa voluptates nostrum veniam expedita quaerat ut ratione architecto eius sunt esse.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem at aliquid eos repellat molestiae, nobis, repudiandae alias aut quam sint aliquam totam possimus fuga placeat similique ratione iusto non? Qui?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius maiores, qui laboriosam aliquid odio illo nulla officiis a aut sit eos accusantium dolore. Facilis quasi minima, unde distinctio reiciendis eius.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet est praesentium animi, voluptates illum inventore, suscipit sit non excepturi dolor accusamus! Qui repellat molestiae et soluta at excepturi modi neque.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptas vitae 
+            </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="section2">
+            <h1>Images</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus obcaecati ipsam dolor, aliquam velit voluptate veniam consectetur maxime rerum nobis, corrupti sit illo, commodi quidem. Non nisi error dicta tempora? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, excepturi beatae culpa sit eveniet officia, sed dolore corrupti recusandae explicabo, fugiat provident nulla aliquid possimus reprehenderit pariatur vel accusamus impedit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit cupiditate temporibus a commodi consectetur vitae ea aliquid, molestias odit assumenda vel dolores repellat aperiam eius. Eum odit dolor doloribus porro.</p>
+
+            <p>If I would like to add some images to my approach during the development of this documentation, that is how I would do it.</p>
+            <img src="img/kanagawa.jpg" alt="The Great Wave of Kanagawa">
+            <figcaption>Fig. 1 - The Great Wave of Kanagawa</figcaption>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="section3">
+            <h1>Adding Code Snippet</h1>
+            <p>What if I want to add some code to my page?</p>
+            <pre><code>
+function toggleTheme(isDark) {
+    nav.style.backgroundColor = isDark ? 'rgb(0 0 0 / 50%)' : 'rgb(255 255 255 / 50%)';
+    textBox.style.backgroundColor = isDark ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 / 50%)';
+
+    // because toggleIcon is a span with 2 children inside, we need to access them like stated below
+    toggleIcon.children[0].textContent = isDark ? 'Dark Mode' : 'Light Mode';
+    isDark ? toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon') : toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
+}
+            </code></pre>
+
+            <p>And this is how you do it</p>
+        </section>
+
+
+
+        <!-- Template for adding new sections -->
+        <!-- <section id="section-number">
+            <h1>Title</h1>
+            <p>Paragraph</p>
+        </section> -->
+    </div>
     <!-- Script -->
     <script src="script.js"></script></body>
 </html>

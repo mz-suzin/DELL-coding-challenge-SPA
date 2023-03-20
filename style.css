@@ -1,34 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600&family=Source+Code+Pro&display=swap');
+
+:root {
+	--primary-color: #43636B;
+	--primary-variant: #1B3F47;
+	--secondary-color: #50825D;
+	--secondary-variant: #1F562D;
+	--background: #84979B;
+	--padding-left: 400px;
+	--padding-right: 300px;
+}
+
 html {
     /* avoids padding to force a horizontal scroll bar  */
-    box-sizing: border-box; 
+    box-sizing: border-box;
+	scroll-behavior: smooth; 
 }
 
 body {
     margin: 0;
     /* full height of the entire screen */
     min-height: 100vh;
+	background-color: var(--background);
+	font-weight: 200;
+	font-family: 'Roboto Mono', monospace;
 }
 
+h1 {
+	text-align: center;
+	font-weight: 600;
+}
+
+.project {
+	height: 100%;
+	width: auto;
+	top: 0;
+	padding-left: var(--padding-left);
+	padding-right: var(--padding-right);
+	text-align: justify;
+}
+
+section {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-direction: column;
+  }
+
 .sidenav {
-    height: 100%;
-	width: 160px;
+	visibility: visible;
+	height: 100%;
+	width: 230px;
 	position: fixed;
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: #111;
+	background-color: var(--primary-variant);
 	overflow-x: hidden;
-	padding-top: 20px;    
-}
+	padding-top: 20px;
+  }
 
 .sidenav a {
 	padding: 6px 8px 6px 16px;
 	text-decoration: none;
 	font-size: 20px;
-	color: #818181;
+	color: var(--background);
 	display: block;
 }
 
 .sidenav a:hover {
 	color: #f1f1f1;
 }
+
+.personal-info {
+	/* min-height: 100vh; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.personal-info img {
+	border: 1px solid var(--secondary-color);
+	border-radius: 10px;
+	padding: 5px 5px;
+	width: auto;
+	background: var(--background);
+	box-shadow: var(--primary-variant);
+	height: 120px;
+  	width: 120px;
+}
+
+.personal-info .text {
+	text-align: center;
+	font-size: 15px;
+}
+
+pre {
+	background-color: var(--primary-variant);
+	color:white;
+	border-radius: 5px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	padding: 10px;
+	text-align: left;
+	font-family: 'Source Code Pro', monospace;;
+}
+
+@media screen and (max-width: 1400px) {
+	:root {
+		--padding-left: 245px;
+		--padding-right: 10px;
+	}
+	.sidenav {
+		visibility: visible;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	:root {
+		--padding-left: 15px;
+	}
+	.sidenav {
+		visibility: hidden;
+	}
+}
+
