@@ -97,6 +97,13 @@ section {
 	font-size: 15px;
 }
 
+select {
+	border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    background: #fff;
+    margin: 0 5px 5px 0;
+}
+
 .section2 {
 	display: flex;
 	justify-content: space-around;
@@ -119,6 +126,7 @@ section {
 	border: 1px solid var(--secondary-color);
 	border-radius: 10px;
 	padding: 5px 5px;
+	min-width: 400px;
 	width: auto;
 	background: var(--background);
 	box-shadow: var(--primary-variant);
