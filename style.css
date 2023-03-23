@@ -5,7 +5,7 @@
 	--primary-variant: #1B3F47;
 	--secondary-color: #50825D;
 	--secondary-variant: #1F562D;
-	--background: #84979B;
+	--background: #b6c6c9;
 	--padding-left: 400px;
 	--padding-right: 300px;
 }
@@ -38,6 +38,7 @@ h1 {
 	padding-right: var(--padding-right);
 	text-align: justify;
 }
+
 
 section {
 	min-height: 100vh;

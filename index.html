@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZS - Coding Challenge</title>
+    <title>PUCRS/DELL IT Academy - mzsuzin</title>
     <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=ncase.me/remember/.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
@@ -19,24 +19,20 @@
                 <h4>Wannabe Dell Employee</h4>
             </div>
         </div>
-        <a href="#section1">Project Explanation</a>
-        <a href="#section2">Images</a>
-        <a href="#section3">Code Snippet</a>
-        <a href="#section4">Contact</a>
+        <a href="#section1">Instruções de Utilização</a>
+        <a href="#section2">Consulta Trecho x Modalidade</a>
+        <a href="#section3">Cadastrar Transporte</a>
+        <a href="#section4">Relatório</a>
     </div>
     <!-- Project Section -->
     <div class="project">
 
         <!-- Section 1 -->
-        <section id="section1">
-            <h1>Project Explanation</h1>
-            <p>The Dell IT Academy is a selective process aimed at finding new employees to work at Dell. This particular process is taking place in south of Brazil, at Dell's facilities in El Dorado, Rio Grande do Sul.</p>
+        <section id="section1" >
+            <h1>Instruções de Utilização</h1>
+            <p>A definir</p>
             <p>The process consists of 3 main phases:
-                <ol>
-                    <li>Inscription</li>
-                    <li>Technical Challenge</li>
-                    <li>Interview</li>
-                </ol>
+                
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi facere optio alias doloribus nesciunt rerum dolore, et sit ipsa voluptates nostrum veniam expedita quaerat ut ratione architecto eius sunt esse.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem at aliquid eos repellat molestiae, nobis, repudiandae alias aut quam sint aliquam totam possimus fuga placeat similique ratione iusto non? Qui?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius maiores, qui laboriosam aliquid odio illo nulla officiis a aut sit eos accusantium dolore. Facilis quasi minima, unde distinctio reiciendis eius.
@@ -47,12 +43,18 @@
 
         <!-- Section 2 -->
         <section id="section2">
-            <h1>Images</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus obcaecati ipsam dolor, aliquam velit voluptate veniam consectetur maxime rerum nobis, corrupti sit illo, commodi quidem. Non nisi error dicta tempora? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, excepturi beatae culpa sit eveniet officia, sed dolore corrupti recusandae explicabo, fugiat provident nulla aliquid possimus reprehenderit pariatur vel accusamus impedit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit cupiditate temporibus a commodi consectetur vitae ea aliquid, molestias odit assumenda vel dolores repellat aperiam eius. Eum odit dolor doloribus porro.</p>
+            <h1>Consulta Trecho x Modalidade</h1>
+            
+            <label for="cities">Cidade Destino</label>
+            <select name="cities" id="dropDownCities">
+            </select>
 
-            <p>If I would like to add some images to my approach during the development of this documentation, that is how I would do it.</p>
+
+
+
+            <!-- <p>If I would like to add some images to my approach during the development of this documentation, that is how I would do it.</p>
             <img src="img/kanagawa.jpg" alt="The Great Wave of Kanagawa">
-            <figcaption>Fig. 1 - The Great Wave of Kanagawa</figcaption>
+            <figcaption>Fig. 1 - The Great Wave of Kanagawa</figcaption> -->
         </section>
 
         <!-- Section 3 -->
@@ -94,5 +96,9 @@ function toggleTheme(isDark) {
         </section> -->
     </div>
     <!-- Script -->
-    <script src="script.js"></script></body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="./scripts/getData.js"></script>
+</body>
 </html>
+
