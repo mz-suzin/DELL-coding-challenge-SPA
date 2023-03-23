@@ -97,6 +97,34 @@ section {
 	font-size: 15px;
 }
 
+.section2 {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	flex-direction: row;
+}
+
+.section2_userInput {
+	display: flex;
+	justify-content: space-around;
+	align-items:flex-start;
+	flex-direction: column;
+	border: 1px solid var(--secondary-color);
+	border-radius: 10px;
+	padding: 20px 20px;
+	width: auto;
+}
+
+.section2_displayInfo {
+	border: 1px solid var(--secondary-color);
+	border-radius: 10px;
+	padding: 5px 5px;
+	width: auto;
+	background: var(--background);
+	box-shadow: var(--primary-variant);
+}  
+
+/* Displaying code */
 pre {
 	background-color: var(--primary-variant);
 	color:white;
@@ -107,6 +135,7 @@ pre {
 	text-align: left;
 	font-family: 'Source Code Pro', monospace;;
 }
+/* Displaying code */
 
 .social-icons {
 	display: flex;
