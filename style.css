@@ -104,16 +104,22 @@ select {
     margin: 0 5px 5px 0;
 }
 
+form {
+	padding-bottom: 10px;
+}
+
 .section2, .section3 {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: flex-start;
 	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 10px;
 }
 
 .section2_userInput, .section3_userInput {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items:flex-start;
 	flex-direction: column;
 	border: 1px solid var(--secondary-color);
@@ -138,6 +144,14 @@ select {
 	justify-content: space-around;
 	align-items:flex-start;
 	flex-direction: column;
+}
+
+.endBtns {
+	display: flex;
+	justify-content: space-between;
+	align-items:flex-start;
+	flex-direction: row;
+	width: 100%;
 }
 
 /* Displaying code */

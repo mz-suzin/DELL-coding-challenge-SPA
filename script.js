@@ -18,10 +18,12 @@ const dropDownTrucks1 = document.getElementById('dropDownTrucks1');
 const sectionTwoBtnConfirm = document.getElementById('sectionTwoBtnConfirm');
 const btnAddCity = document.getElementById('btnAddCity');
 const btnResetCities = document.getElementById('btnResetCities');
-const btnAddItem = document.getElementById('btnAddItem') ;
+const btnAddItem = document.getElementById('btnAddItem');
+const btnResetItems = document.getElementById('btnResetItems');
 
 // divs
 const userAddedCities = document.getElementById('userAddedCities');
+const userAddedItems = document.getElementById('userAddedItems');
 
 // General variables declaration
 const truckInfo = [
@@ -94,9 +96,17 @@ function removeDropDownCities() {
     }
 };
 
+function removeItems() {
+    while (userAddedItems.firstChild) {
+        userAddedItems.removeChild(userAddedItems.lastChild);
+    }
+}
+
 // Event Listeners
 btnResetCities.addEventListener('click', removeDropDownCities);
+btnResetItems.addEventListener('click', removeItems);
+
 btnAddItem.addEventListener('click', () => {
     btnAddItem.disabled = true;
-    addItem();
+    addItem(btnAddItem);
 });
