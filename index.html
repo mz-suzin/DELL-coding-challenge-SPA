@@ -15,9 +15,10 @@
     <div class="sidenav">
         <div class="personal-info">
             <img src="img/mzsuzin.jpg" alt="Matheus Suzin">
+            <p></p>
             <div class="text">
-                <h4>Matheus Suzin</h4>
-                <h4>Wannabe Dell Employee</h4>
+                <h5>Matheus Suzin</h5>
+                <h5>Wannabe Dell Employee</h5>
             </div>
         </div>
         <a href="#section1">Instruções de Utilização</a>
@@ -51,10 +52,10 @@
                     <h4>Insira os Parametros Desejados</h4>
                 
                     <label for="dropDownCities1">Cidade Origem</label>
-                    <select name="cities" id="dropDownCities1" class="dropDownCities"></select>
+                    <select name="city" id="dropDownCities1" class="dropDownCities"></select>
 
                     <label for="dropDownCities2">Cidade Destino</label>
-                    <select name="cities" id="dropDownCities2" class="dropDownCities"></select>
+                    <select name="city" id="dropDownCities2" class="dropDownCities"></select>
 
                     <label for="dropDownTrucks1">Modalidade de Transporte</label>
                     <select name="truck" id="dropDownTrucks1" class="dropDownTrucks"></select>
@@ -82,8 +83,37 @@
 
         <!-- Section 3 -->
         <section id="section3">
-            <h1>Adding Code Snippet</h1>
-            <p>What if I want to add some code to my page?</p>
+            <h1>Cadastrar Transporte</h1>
+
+            <div class="section3">
+                <div class="section3_userInput">
+                    <label for="dropDownCities3">Cidade Origem</label>
+                    <select name="city" id="dropDownCities3" class="dropDownCities"></select>
+
+                    <label for="userAddedCities">Cidade Destino</label>
+                    <div id="userAddedCities"></div>
+                    <button type="button" class="btn btn-secondary" id="btnAddCity">Adicionar destino</button>
+                    <p> </p>
+                    <button type="button" class="btn btn-danger" id="btnResetCities">Reset</button>
+                </div>
+
+                <div class="section3_userInput">
+                    <label for="userAddedItems">Itens para transporte</label>
+                    <div id="userAddedItems"></div>
+                    <button type="button" class="btn btn-secondary" id="btnAddItem">Adicionar item</button>
+                    <p> </p>
+                    <button type="button" class="btn btn-danger" id="btnResetItems">Reset</button>
+                </div>
+
+                <div class="section3_displayInfo">
+                    <p>teste teste</p>
+                </div>
+            </div>
+
+
+
+
+            <!-- <p>What if I want to add some code to my page?</p>
             <pre><code>
 function toggleTheme(isDark) {
     nav.style.backgroundColor = isDark ? 'rgb(0 0 0 / 50%)' : 'rgb(255 255 255 / 50%)';
@@ -93,9 +123,8 @@ function toggleTheme(isDark) {
     toggleIcon.children[0].textContent = isDark ? 'Dark Mode' : 'Light Mode';
     isDark ? toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon') : toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
 }
-            </code></pre>
-
-            <p>And this is how you do it</p>
+            </code></pre> -->
+            <!-- <p>And this is how you do it</p> -->
         </section>
 
         <section id="section4">

@@ -104,14 +104,14 @@ select {
     margin: 0 5px 5px 0;
 }
 
-.section2 {
+.section2, .section3 {
 	display: flex;
 	justify-content: space-around;
 	align-items: flex-start;
 	flex-direction: row;
 }
 
-.section2_userInput {
+.section2_userInput, .section3_userInput {
 	display: flex;
 	justify-content: space-around;
 	align-items:flex-start;
@@ -120,9 +120,10 @@ select {
 	border-radius: 10px;
 	padding: 20px 20px;
 	width: auto;
+	height: auto;
 }
 
-.section2_displayInfo {
+.section2_displayInfo, .section3_displayInfo {
 	border: 1px solid var(--secondary-color);
 	border-radius: 10px;
 	padding: 5px 5px;
@@ -131,6 +132,13 @@ select {
 	background: var(--background);
 	box-shadow: var(--primary-variant);
 }  
+
+#userAddedCities {
+	display: flex;
+	justify-content: space-around;
+	align-items:flex-start;
+	flex-direction: column;
+}
 
 /* Displaying code */
 pre {
