@@ -1,16 +1,15 @@
 // Coded by Matheus Suzin
 // March, 2023.
 
-// Calculate distance and price for section 2
 
-// et elements from DOM
+// Get elements from DOM
 const section2_originText = document.getElementById('section2_originText');
 const section2_destinyText = document.getElementById('section2_destinyText');
 const section2_truckType = document.getElementById('section2_truckType');
 const section2_distance = document.getElementById('section2_distance');
 const section2_cost = document.getElementById('section2_cost');
 
-
+// Calculate distance and price for section 2
 function calculateSectionTwo(origin, destiny, truck, data) {
     let indexOrigin = data[0].findIndex(e => e === origin)
     let indexDestiny = data[0].findIndex(e => e === destiny)

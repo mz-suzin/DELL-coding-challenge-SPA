@@ -5,9 +5,16 @@
 const userFormAddItem = document.getElementById('userFormAddItem');
 const userAddedItems = document.getElementById('userAddedItems');
 
+// globar variables
+let items = [];
 
 // Adding a form using bootstrap styling
 // when submit button is pressed, will call function submitForm. Event is being passed to avoid screen scrolling and btnAddItem to unlock button after submission
+// 1 - creates the form
+// 2 - creates text elements of form
+// 3 - creates user interface by inserting form into div userFormAddItem
+// 4 - creates the submit button and adds it to div userFormAddItem
+// 5 - returns an array containing an object with items information ({description, quantity, weight})
 function addItem(btnAddItem) {
     let form = document.createElement('form');
     form.onsubmit = (event) => submitForm(event, btnAddItem);
@@ -55,16 +62,21 @@ function addItem(btnAddItem) {
     button.className = "btn btn-info";
     button.innerHTML = 'Inserir';
     form.insertAdjacentElement('beforeend', button);
+
+    // returns all items
+    return items;
 }
 
 // 1 - Checks if user input is correct -> 
 // NOT CORRECT: shows an alert and returns false.
 // CORRECT:  Clears the form from screen and displays information inside div userAddedItems
 // 2 - Enables button to add item
+// 3 - Creates the object containing items information and returns it to main function
 function submitForm(event, btnAddItem) {
     const itemDescription = document.getElementById('addItem0').value;
     const itemWeight = document.getElementById('addItem1').value;
     const itemQuantity = document.getElementById('addItem2').value;
+
 
     // check valid input
     if (isNaN(itemWeight) && isNaN(itemQuantity)) {
@@ -88,7 +100,13 @@ function submitForm(event, btnAddItem) {
     userAddedItems.appendChild(pTag);
 
     btnAddItem.disabled = false;
+
     event.preventDefault(); // prevent the default form submission behavior
+    items.push({ 
+        description: itemDescription, 
+        quantity: itemQuantity, 
+        weight: itemWeight
+    });
 }
 
 export default addItem;

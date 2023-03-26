@@ -5,6 +5,7 @@
 import getData from "./scripts/getData.js";
 import calculateSectionTwo from "./scripts/calculateSectionTwo.js";
 import addItem from "./scripts/addItem.js";
+import generateSummary from "./scripts/generateSummary.js";
 
 // Get elements from DOM
 // drop-down lists
@@ -20,6 +21,7 @@ const btnAddCity = document.getElementById('btnAddCity');
 const btnResetCities = document.getElementById('btnResetCities');
 const btnAddItem = document.getElementById('btnAddItem');
 const btnResetItems = document.getElementById('btnResetItems');
+const btnGenerateSummary = document.getElementById('btnGenerateSummary');
 
 // divs
 const userAddedCities = document.getElementById('userAddedCities');
@@ -31,6 +33,7 @@ const truckInfo = [
     'Caminhão Médio (4TON Max)',
     'Caminhão Grande (10TON Max)'
 ];
+let items = [];
 
 
 // ********* Main Code *********
@@ -51,13 +54,14 @@ getData().then(data => {
     btnAddCity.addEventListener('click', () => {addDropDownCities(data)});
 })
 
+// Populate city's drop-down list with cities names
 function populateDropDownCities(list, data) {
     let option = document.createElement('option');
-    option.selected = true;
-    option.disabled = true;
-    option.value = '';
-    option.innerHTML = ' -- escolha uma opção -- ';
-    list.appendChild(option);
+    // option.selected = true;
+    // option.disabled = true;
+    // option.value = '';
+    // option.innerHTML = ' -- escolha uma opção -- ';
+    // list.appendChild(option);
     for (let i = 0; i < data[0].length; i++) {
         option = document.createElement('option');
         option.value = data[0][i];
@@ -66,6 +70,7 @@ function populateDropDownCities(list, data) {
     }
 }
 
+// Populate truck's drop-down list with trucks modalities
 function populateDropDownTrucks(list) {
     let option = document.createElement('option');
     option.selected = true;
@@ -81,6 +86,7 @@ function populateDropDownTrucks(list) {
     }
 }
 
+// Create a drop-down element and then calls populateDropDownCities
 function addDropDownCities(data) {
     let select = document.createElement('select');
     select.name = "city";
@@ -90,12 +96,14 @@ function addDropDownCities(data) {
     populateDropDownCities(select, data);
 };
 
+// Create a drop-down element and then calls populateDropDownTrucks
 function removeDropDownCities() {
     while (userAddedCities.firstChild) {
         userAddedCities.removeChild(userAddedCities.lastChild);
     }
 };
 
+// Remove every item added to user's list
 function removeItems() {
     while (userAddedItems.firstChild) {
         userAddedItems.removeChild(userAddedItems.lastChild);
@@ -105,8 +113,11 @@ function removeItems() {
 // Event Listeners
 btnResetCities.addEventListener('click', removeDropDownCities);
 btnResetItems.addEventListener('click', removeItems);
-
 btnAddItem.addEventListener('click', () => {
     btnAddItem.disabled = true;
-    addItem(btnAddItem);
+    items = addItem(btnAddItem);
 });
+btnGenerateSummary.addEventListener('click', () => {
+    generateSummary(items);
+});
+

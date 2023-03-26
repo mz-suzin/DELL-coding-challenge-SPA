@@ -32,15 +32,8 @@
         <!-- Section 1 -->
         <section id="section1" >
             <h1>Instruções de Utilização</h1>
-            <p>A definir</p>
-            <p>The process consists of 3 main phases:
-                
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi facere optio alias doloribus nesciunt rerum dolore, et sit ipsa voluptates nostrum veniam expedita quaerat ut ratione architecto eius sunt esse.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem at aliquid eos repellat molestiae, nobis, repudiandae alias aut quam sint aliquam totam possimus fuga placeat similique ratione iusto non? Qui?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius maiores, qui laboriosam aliquid odio illo nulla officiis a aut sit eos accusantium dolore. Facilis quasi minima, unde distinctio reiciendis eius.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet est praesentium animi, voluptates illum inventore, suscipit sit non excepturi dolor accusamus! Qui repellat molestiae et soluta at excepturi modi neque.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptas vitae 
-            </p>
+            <p>Consulta Trecho x Modalidade</p>
+            <p>Esta seção fornece dados do tipo distancia entre cidades e o custo para a modalidade escolhida</p>
         </section>
 
         <!-- Section 2 -->
@@ -87,52 +80,39 @@
 
             <div class="section3">
                 <div class="section3_userInput">
-                    <label for="dropDownCities3">Cidade Origem</label>
-                    <select name="city" id="dropDownCities3" class="dropDownCities"></select>
+                    <div class="section3_innerInput">
+                        <label for="section3_originCity">Cidade Origem</label>
+                        <select name="city" id="section3_originCity" class="dropDownCities"></select>
 
-                    <label for="userAddedCities">Cidade Destino</label>
-                    <div id="userAddedCities"></div>
-                    <button type="button" class="btn btn-secondary" id="btnAddCity">Adicionar destino</button>
-                    <p> </p>
-                    <div class="endBtns">
+                        <label for="userAddedCities">Cidade Destino</label>
+                        <div id="userAddedCities"></div>
+                        <button type="button" class="btn btn-secondary" id="btnAddCity">Adicionar destino</button>
+                        <p> </p>
                         <button type="button" class="btn btn-danger" id="btnResetCities">Reset</button>
-                        <button type="button" class="btn btn-success" id="btnConfirmCities">Confirma</button>
                     </div>
-                </div>
-
-                <div class="section3_userInput">
-                    <label for="userAddedItems">Itens para transporte</label>
-                    <div id="userAddedItems">
-                    </div>
-                    <div id="userFormAddItem"></div>
-                    <button type="button" class="btn btn-secondary" id="btnAddItem">Adicionar item</button>
-                    <p> </p>
-                    <div class="endBtns">
+                
+                    <div class="section3_innerInput">
+                        <label for="userAddedItems">Itens para transporte</label>
+                        <div id="userAddedItems">
+                        </div>
+                        <div id="userFormAddItem"></div>
+                        <button type="button" class="btn btn-secondary" id="btnAddItem">Adicionar item</button>
+                        <p> </p>
                         <button type="button" class="btn btn-danger" id="btnResetItems">Reset</button>
-                        <button type="button" class="btn btn-success" id="btnConfirmItems">Confirma</button>
                     </div>
+                    <button type="button" class="btn btn-success" id="btnGenerateSummary">Gerar</button>
                 </div>
 
-                <div class="section3_displayInfo">
-                    <p>teste teste</p>
+                <div class="TO_BE_DEFINED">
+                    <div id="display_originCity"></div>
+                    <div id="display_table"></div>
+                    <!-- <div class="endBtns">
+                        <button type="button" class="btn btn-danger" id="display_btnReset">Reset</button>
+                        <button type="button" class="btn btn-success" id="display_btnConfirm">Cadastrar</button>
+                    </div> -->
                 </div>
             </div>
 
-
-
-
-            <!-- <p>What if I want to add some code to my page?</p>
-            <pre><code>
-function toggleTheme(isDark) {
-    nav.style.backgroundColor = isDark ? 'rgb(0 0 0 / 50%)' : 'rgb(255 255 255 / 50%)';
-    textBox.style.backgroundColor = isDark ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 / 50%)';
-
-    // because toggleIcon is a span with 2 children inside, we need to access them like stated below
-    toggleIcon.children[0].textContent = isDark ? 'Dark Mode' : 'Light Mode';
-    isDark ? toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon') : toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
-}
-            </code></pre> -->
-            <!-- <p>And this is how you do it</p> -->
         </section>
 
         <section id="section4">

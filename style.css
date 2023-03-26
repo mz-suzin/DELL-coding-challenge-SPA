@@ -21,7 +21,7 @@ body {
     /* full height of the entire screen */
     min-height: 100vh;
 	background-color: var(--background);
-	font-weight: 200;
+	font-weight: 400;
 	font-family: 'Roboto Mono', monospace;
 }
 
@@ -108,6 +108,29 @@ form {
 	padding-bottom: 10px;
 }
 
+/* TABLE STYLING */
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: var(--primary-variant);
+	color: white;
+}
+
 .section2, .section3 {
 	display: flex;
 	justify-content: center;
@@ -117,7 +140,7 @@ form {
 	gap: 10px;
 }
 
-.section2_userInput, .section3_userInput {
+.section2_userInput {
 	display: flex;
 	justify-content: center;
 	align-items:flex-start;
@@ -129,6 +152,15 @@ form {
 	height: auto;
 }
 
+.section3_userInput {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-direction: row;
+	border: 1px solid var(--secondary-color);
+	border-radius: 10px;
+}
+
 .section2_displayInfo, .section3_displayInfo {
 	border: 1px solid var(--secondary-color);
 	border-radius: 10px;
@@ -137,7 +169,15 @@ form {
 	width: auto;
 	background: var(--background);
 	box-shadow: var(--primary-variant);
-}  
+} 
+
+.section3_innerInput {
+	display: flex;
+	align-items:stretch;
+	align-content: flex-start;
+	flex-direction: column;
+	padding: 20px 20px;
+}
 
 #userAddedCities {
 	display: flex;
