@@ -6,16 +6,12 @@ const display_originCity = document.getElementById('display_originCity');
 const display_table = document.getElementById('display_table');
 const userAddedCities = document.getElementById('userAddedCities');
 const originCity = document.getElementById('section3_originCity');
-const display_buttons = document.getElementById('display_buttons');
 
 // This function will 
 // 1 - check if user provided enough information to register transportation
 // 2 - build user interface with a summary of the information provided
-// 3 - create buttons for confirming data or resetting.
 function generateRevision(items) {
     let cities = getDescendantElements(userAddedCities, 'select');
-
-    console.log(cities);
 
     if (!checkInput(cities, items, originCity)) return false;
 
@@ -35,21 +31,8 @@ function generateRevision(items) {
     const table = createTable(cities, items);
     display_table.appendChild(table);
 
-    // Third div -> buttons
-    // Will only create html elements if they have not been created before
-    if(!display_buttons.innerHTML) {
-        const btnReset = document.createElement('button') ;
-        btnReset.className = 'btn btn-danger';
-        btnReset.id = 'display_btnReset';
-        btnReset.innerHTML = 'Reset';
-        display_buttons.appendChild(btnReset);
-
-        const btnConfirm = document.createElement('button') ;
-        btnConfirm.className = 'btn btn-success';
-        btnConfirm.id = 'display_btnConfirm';
-        btnConfirm.innerHTML = 'Gerar Relatório';
-        display_buttons.appendChild(btnConfirm);
-    }
+    let section3_tableInputs = document.querySelectorAll('.tableInputs');
+    return [section3_tableInputs, cities, originCity.value];
 }
 
 // Checks if user provided enough information to register transportation
@@ -141,6 +124,8 @@ function createTable(cities, items) {
             } else { //input cell
                 let td = tr.insertCell();
                 let input = document.createElement('input');
+                input.className = 'tableInputs';
+                input.id = `${items[j-1].description}`
                 input.value = 0;
                 input.type = 'number';
                 input.step = '50';

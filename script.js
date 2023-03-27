@@ -6,6 +6,7 @@ import getData from "./scripts/getData.js";
 import calculateSectionTwo from "./scripts/calculateSectionTwo.js";
 import addItem from "./scripts/addItem.js";
 import generateRevision from "./scripts/generateRevision.js";
+import logDelivery from "./scripts/logDelivery.js";
 
 // Get elements from DOM
 // drop-down lists
@@ -22,11 +23,16 @@ const btnResetCities = document.getElementById('btnResetCities');
 const btnAddItem = document.getElementById('btnAddItem');
 const btnResetItems = document.getElementById('btnResetItems');
 const btnGenerateRevision = document.getElementById('btnGenerateRevision');
+const display_btnReset = document.getElementById('display_btnReset');
+const display_btnConfirm = document.getElementById('display_btnConfirm');
 
 // divs
 const userAddedCities = document.getElementById('userAddedCities');
 const userAddedItems = document.getElementById('userAddedItems');
 const section3_revision = document.querySelector('.section3_revision');
+
+// section 3 table inputs
+let section3_tableInputs = [];
 
 // General variables declaration
 const truckInfo = [
@@ -35,6 +41,10 @@ const truckInfo = [
     'Caminhão Grande (10TON Max)'
 ];
 let items = [];
+let cities = [];
+let originCity = '';
+let tableInputsCleanedFlag = false;
+
 
 
 // ********* Main Code *********
@@ -53,6 +63,20 @@ getData().then(data => {
     // Event Listeners
     sectionTwoBtnConfirm.addEventListener('click', () => {calculateSectionTwo(dropDownCities1.value, dropDownCities2.value, dropDownTrucks1.value, data)});
     btnAddCity.addEventListener('click', () => {addDropDownCities(data)});
+
+    // first the function cleans the table input data, only sending the .value.
+    // flag checks if the cleaning action has already been performed, in case user clicks twice on btnConfirm
+    display_btnConfirm.addEventListener('click', () => {
+        if (!tableInputsCleanedFlag){
+            let aux = [];
+            for (let i = 0; i < section3_tableInputs.length; i++) {
+                aux.push(section3_tableInputs[i].value);
+                tableInputsCleanedFlag = true;
+            }
+            section3_tableInputs = aux;
+        }
+        logDelivery(section3_tableInputs, cities, originCity, items);
+    })
 })
 
 // Populate city's drop-down list with cities names
@@ -115,12 +139,21 @@ function removeItems() {
 // Event Listeners
 btnResetCities.addEventListener('click', removeDropDownCities);
 btnResetItems.addEventListener('click', removeItems);
+
+// ADD ITEMS
 btnAddItem.addEventListener('click', () => {
     btnAddItem.disabled = true;
     items = addItem(btnAddItem);
 });
+
+// will generate the table for revision and return an array with item quantity per city and every destination city
 btnGenerateRevision.addEventListener('click', () => {
+    tableInputsCleanedFlag = false;
     section3_revision.removeAttribute('hidden');
-    generateRevision(items);
+    [section3_tableInputs, cities, originCity] = generateRevision(items);
 });
 
+// clears user input inside table
+display_btnReset.addEventListener('click', () => {
+    section3_tableInputs.forEach(x => x.value = 0);
+})
