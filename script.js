@@ -155,5 +155,5 @@ btnGenerateRevision.addEventListener('click', () => {
 
 // clears user input inside table
 display_btnReset.addEventListener('click', () => {
-    section3_tableInputs.forEach(x => x.value = 0);
+    section3_tableInputs.forEach(x => {x.value = 0});
 })

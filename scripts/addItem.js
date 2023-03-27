@@ -104,8 +104,8 @@ function submitForm(event, btnAddItem) {
     event.preventDefault(); // prevent the default form submission behavior
     items.push({ 
         description: itemDescription, 
-        quantity: itemQuantity, 
-        weight: itemWeight
+        quantity: Number(itemQuantity), 
+        weight: Number(itemWeight)
     });
 }
 
