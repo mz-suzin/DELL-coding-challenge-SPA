@@ -30,6 +30,10 @@ h1 {
 	font-weight: 600;
 }
 
+label {
+	font-weight: 600;
+}
+
 .project {
 	height: 100%;
 	width: auto;
@@ -39,13 +43,80 @@ h1 {
 	text-align: justify;
 }
 
-
+/* SECTIONS */
 section {
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: stretch;
 	flex-direction: column;
+}
+
+.section2 {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.section2_userInput {
+	display: flex;
+	justify-content: center;
+	align-items:flex-start;
+	flex-direction: column;
+	border: 1px solid var(--secondary-color);
+	border-radius: 10px;
+	padding: 20px 20px;
+	width: auto;
+	height: auto;
+}
+
+.section2_displayInfo {
+	border: 1px solid var(--secondary-color);
+	border-radius: 10px;
+	padding: 5px 5px;
+	min-width: 400px;
+	width: auto;
+	background: var(--background);
+	box-shadow: var(--primary-variant);
+} 
+
+.section3 {
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.section3_userInput {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-direction: row;
+	border: 1px solid var(--secondary-color);
+	border-radius: 10px;
+}
+
+.section3_innerInput {
+	display: flex;
+	align-items:stretch;
+	align-content: flex-start;
+	flex-direction: column;
+	padding: 20px 20px;
+}
+
+.section3_revision {
+	display: flex;
+	flex-direction: column;
+	/* align-content: center; */
+	row-gap: 10px;
+	border: 1px solid var(--secondary-color);
+	border-radius: 10px;
+	padding: 20px;
 }
 
 .sidenav {
@@ -131,53 +202,7 @@ th {
 	color: white;
 }
 
-.section2, .section3 {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: 10px;
-}
 
-.section2_userInput {
-	display: flex;
-	justify-content: center;
-	align-items:flex-start;
-	flex-direction: column;
-	border: 1px solid var(--secondary-color);
-	border-radius: 10px;
-	padding: 20px 20px;
-	width: auto;
-	height: auto;
-}
-
-.section3_userInput {
-	display: flex;
-	justify-content: space-between;
-	align-items: stretch;
-	flex-direction: row;
-	border: 1px solid var(--secondary-color);
-	border-radius: 10px;
-}
-
-.section2_displayInfo, .section3_displayInfo {
-	border: 1px solid var(--secondary-color);
-	border-radius: 10px;
-	padding: 5px 5px;
-	min-width: 400px;
-	width: auto;
-	background: var(--background);
-	box-shadow: var(--primary-variant);
-} 
-
-.section3_innerInput {
-	display: flex;
-	align-items:stretch;
-	align-content: flex-start;
-	flex-direction: column;
-	padding: 20px 20px;
-}
 
 #userAddedCities {
 	display: flex;
@@ -188,9 +213,9 @@ th {
 
 .endBtns {
 	display: flex;
-	justify-content: space-between;
-	align-items:flex-start;
+	justify-content: flex-start;
 	flex-direction: row;
+	column-gap: 10px;
 	width: 100%;
 }
 

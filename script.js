@@ -5,7 +5,7 @@
 import getData from "./scripts/getData.js";
 import calculateSectionTwo from "./scripts/calculateSectionTwo.js";
 import addItem from "./scripts/addItem.js";
-import generateSummary from "./scripts/generateSummary.js";
+import generateRevision from "./scripts/generateRevision.js";
 
 // Get elements from DOM
 // drop-down lists
@@ -21,11 +21,12 @@ const btnAddCity = document.getElementById('btnAddCity');
 const btnResetCities = document.getElementById('btnResetCities');
 const btnAddItem = document.getElementById('btnAddItem');
 const btnResetItems = document.getElementById('btnResetItems');
-const btnGenerateSummary = document.getElementById('btnGenerateSummary');
+const btnGenerateRevision = document.getElementById('btnGenerateRevision');
 
 // divs
 const userAddedCities = document.getElementById('userAddedCities');
 const userAddedItems = document.getElementById('userAddedItems');
+const section3_revision = document.querySelector('.section3_revision');
 
 // General variables declaration
 const truckInfo = [
@@ -103,10 +104,11 @@ function removeDropDownCities() {
     }
 };
 
-// Remove every item added to user's list
+// Remove every item added to user's list and from items array
 function removeItems() {
     while (userAddedItems.firstChild) {
         userAddedItems.removeChild(userAddedItems.lastChild);
+        items.pop();
     }
 }
 
@@ -117,7 +119,8 @@ btnAddItem.addEventListener('click', () => {
     btnAddItem.disabled = true;
     items = addItem(btnAddItem);
 });
-btnGenerateSummary.addEventListener('click', () => {
-    generateSummary(items);
+btnGenerateRevision.addEventListener('click', () => {
+    section3_revision.removeAttribute('hidden');
+    generateRevision(items);
 });
 

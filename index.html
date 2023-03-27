@@ -61,7 +61,7 @@
                 <div class="section2_displayInfo">
                     <h4>Resultado</h4>
                     <p id="section2_originText">Origem: </p>
-                    <p id="section2_destinyText">Destino: </p>
+                    <p id="section2_destinationText">Destino: </p>
                     <p id="section2_truckType">Modalidade: </p>
                     <p id="section2_distance">Distância a ser percorrida: </p>
                     <p id="section2_cost">Custo esperado: R$</p>
@@ -93,23 +93,19 @@
                 
                     <div class="section3_innerInput">
                         <label for="userAddedItems">Itens para transporte</label>
-                        <div id="userAddedItems">
-                        </div>
+                        <div id="userAddedItems"></div>
                         <div id="userFormAddItem"></div>
                         <button type="button" class="btn btn-secondary" id="btnAddItem">Adicionar item</button>
                         <p> </p>
                         <button type="button" class="btn btn-danger" id="btnResetItems">Reset</button>
                     </div>
-                    <button type="button" class="btn btn-success" id="btnGenerateSummary">Gerar</button>
+                    <button type="button" class="btn btn-success" id="btnGenerateRevision">Gerar</button>
                 </div>
 
-                <div class="TO_BE_DEFINED">
-                    <div id="display_originCity"></div>
-                    <div id="display_table"></div>
-                    <!-- <div class="endBtns">
-                        <button type="button" class="btn btn-danger" id="display_btnReset">Reset</button>
-                        <button type="button" class="btn btn-success" id="display_btnConfirm">Cadastrar</button>
-                    </div> -->
+                <div hidden class="section3_revision">
+                    <div id = "display_originCity"></div>
+                    <div id = "display_table"></div>
+                    <div id = "display_buttons" class="endBtns"></div>
                 </div>
             </div>
 
