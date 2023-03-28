@@ -124,6 +124,7 @@ function createTable(cities, items) {
             } else { //input cell
                 let td = tr.insertCell();
                 let input = document.createElement('input');
+                input.setAttribute('onclick', 'this.select()');
                 input.className = 'tableInputs';
                 input.id = `${items[j-1].description}`
                 input.value = 0;

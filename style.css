@@ -119,6 +119,27 @@ section {
 	padding: 20px;
 }
 
+#section3_logDelivery {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+#displayLog_stages {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.displayStage {
+	border: 1px solid var(--secondary-color);
+	border-radius: 10px;
+	padding: 5px;
+}
+
 .sidenav {
 	visibility: visible;
 	height: 100%;

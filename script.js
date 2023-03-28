@@ -75,7 +75,7 @@ getData().then(data => {
             }
             section3_tableInputs = aux;
         }
-        logDelivery(section3_tableInputs, cities, originCity, items);
+        logDelivery(section3_tableInputs, cities, originCity, items, data);
     })
 })
 
@@ -155,5 +155,5 @@ btnGenerateRevision.addEventListener('click', () => {
 
 // clears user input inside table
 display_btnReset.addEventListener('click', () => {
-    section3_tableInputs.forEach(x => {x.value = 0});
+    section3_tableInputs.forEach(x => {x.reset()});
 })
