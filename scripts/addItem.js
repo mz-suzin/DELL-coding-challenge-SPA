@@ -33,19 +33,19 @@ function addItem(btnAddItem) {
                 input.placeholder = 'Descrição';
                 input.maxLength = "15";
                 // teste
-                input.value='Banana'
+                // input.value='Banana'
                 break;
             case 1:
                 input.placeholder = 'Peso do item (Kg)';
                 input.maxLength = "4";
                 // teste
-                input.value='1'
+                // input.value='1'
                 break;
             case 2:
                 input.placeholder = 'Quantidade (Unidades)';
                 input.maxLength = "10";
                 // teste
-                input.value='500'
+                // input.value='500'
                 break;
         }
         // insert the input into div

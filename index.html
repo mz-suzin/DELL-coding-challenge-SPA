@@ -24,7 +24,8 @@
         <a href="#section1">Instruções de Utilização</a>
         <a href="#section2">Consulta Trecho x Modalidade</a>
         <a href="#section3">Cadastrar Transporte</a>
-        <a href="#section4">Relatório</a>
+        <a href="#section4">Dados Estatísticos</a>
+        <a href="#section5">Contato</a>
     </div>
     <!-- Project Section -->
     <div class="project">
@@ -32,8 +33,36 @@
         <!-- Section 1 -->
         <section id="section1" >
             <h1>Instruções de Utilização</h1>
-            <p>Consulta Trecho x Modalidade</p>
-            <p>Esta seção fornece dados do tipo distancia entre cidades e o custo para a modalidade escolhida</p>
+
+            <p></p>
+
+            <h4>Consulta Trecho x Modalidade</h4>
+            <p>Utilize esta funcionalidade para consultar os custos e distâncias entre todas as cidades disponíves para transporte.</p>
+
+            <p></p>
+
+            <h4>Cadastrar Transporte</h4>
+            <ol>
+                <li>Adicione a origem e os destinos desejados na interface. 
+                    <br>Obs.: É necessário adicionar ao menos uma cidade de origem e uma cidade de destino.</li>
+                <li>Clique no botão 'inserir' para adicionar itens a serem transportados. 
+                    <br>Será aberta uma janela para adicinar a descrição, peso e quantidade do mesmo. 
+                    <br>Obs.: É necessário adicionar ao menos um item.</li>
+                <li>Clique em 'gerar' para visualizar o resumo do transporte configurado.</li>
+                <li>Configure os itens que deseja transportar para as respectivas cidades.
+                    <br>Obs.: É necessário que a quantidade parcial de itens seja a mesma que a quantidade total.</li>
+                <li>Clique em 'Cadastrar Transporte' para visualizar as informações do trajeto configurado.</li>
+                <li>Clique em 'Salvar' para salvar os dados do trajeto.</li>
+            </ol>
+
+            <p></p>
+
+            <h4>Dados Estatísticos</h4>
+            <p>Utilize esta seção para visualizar os dados de todos os transportes cadastrados até o momento.</p>
+
+            <p></p>
+            
+            <p>Para sair, feche a janela do seu navegador.</p>
         </section>
 
         <!-- Section 2 -->
@@ -122,24 +151,36 @@
         </section>
 
         <section id="section4">
-            <h1>Contact Information</h1>
-            <div class="social-icons">
-                <a href="https://github.com/mz-suzin" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://twitter.com/matheus_suzin" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/mz-suzin/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            </div> 
-            <p></p>
-            <h2><i class="fa-regular fa-envelope"></i>  mzsuzin@gmail.com</h2>
-            <h2><i class="fa-sharp fa-solid fa-earth-americas"></i>  My Portfolio: <a href="https://mz-suzin.github.io/simple-portfolio/" target="_blank">https://mz-suzin.github.io/simple-portfolio/</a></h2>
+            <h1>Dados Estatísticos</h1>
+            <div hidden id="section4_showData">
+                <p id="section4_totalCost"></p>
+                <p id="section4_stageCost">Custo por trecho: :/</p>
+                <p id="section4_averageCostPerKm"></p>
+                <p id="section4_averageCostPerItem">Custo médio por item: :/</p>
+                <p id="section4_costPerTruck">Custo total por veículo deslocado: :/</p>
+                <p id="section4_numberOfTrucks"></p>
+                <p id="section4_totalItems"></p>
+            </div>
+            <button type="button" class="btn btn-danger" id="section4_reset">Reset</button> 
+
+
+            
         </section>        
 
 
 
         <!-- Template for adding new sections -->
-        <!-- <section id="section-number">
-            <h1>Title</h1>
-            <p>Paragraph</p>
-        </section> -->
+        <section id="section5">
+            <h1>Obrigado pela oportunidade</h1>
+            <div class="social-icons">
+                <a href="https://github.com/mz-suzin" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com/matheus_suzin" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/mz-suzin/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p></p>
+            <h3><i class="fa-regular fa-envelope"></i>  mzsuzin@gmail.com</h3>
+            <!-- <h2><i class="fa-sharp fa-solid fa-earth-americas"></i>  My Portfolio: <a href="https://mz-suzin.github.io/simple-portfolio/" target="_blank">https://mz-suzin.github.io/simple-portfolio/</a></h2> -->
+        </section>
     </div>
     <!-- Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>

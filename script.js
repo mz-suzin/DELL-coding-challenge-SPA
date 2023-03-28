@@ -7,6 +7,7 @@ import calculateSectionTwo from "./scripts/calculateSectionTwo.js";
 import addItem from "./scripts/addItem.js";
 import generateRevision from "./scripts/generateRevision.js";
 import logDelivery from "./scripts/logDelivery.js";
+import saveToStatisticalData from "./scripts/saveToStatisticalData.js";
 
 // Get elements from DOM
 // drop-down lists
@@ -25,6 +26,7 @@ const btnResetItems = document.getElementById('btnResetItems');
 const btnGenerateRevision = document.getElementById('btnGenerateRevision');
 const display_btnReset = document.getElementById('display_btnReset');
 const display_btnConfirm = document.getElementById('display_btnConfirm');
+const displayLog_btnSave = document.getElementById('displayLog_btnSave');
 
 // divs
 const userAddedCities = document.getElementById('userAddedCities');
@@ -44,6 +46,8 @@ let items = [];
 let cities = [];
 let originCity = '';
 let tableInputsCleanedFlag = false;
+let lastCargoInfo = [];
+let totalCost = 0;
 
 
 
@@ -75,18 +79,22 @@ getData().then(data => {
             }
             section3_tableInputs = aux;
         }
-        logDelivery(section3_tableInputs, cities, originCity, items, data);
+        [lastCargoInfo, totalCost] = logDelivery(section3_tableInputs, cities, originCity, items, data);
+    })
+
+    displayLog_btnSave.addEventListener('click', () => {
+        saveToStatisticalData(lastCargoInfo, totalCost);
     })
 })
 
 // Populate city's drop-down list with cities names
 function populateDropDownCities(list, data) {
     let option = document.createElement('option');
-    // option.selected = true;
-    // option.disabled = true;
-    // option.value = '';
-    // option.innerHTML = ' -- escolha uma opção -- ';
-    // list.appendChild(option);
+    option.selected = true;
+    option.disabled = true;
+    option.value = '';
+    option.innerHTML = ' -- escolha uma opção -- ';
+    list.appendChild(option);
     for (let i = 0; i < data[0].length; i++) {
         option = document.createElement('option');
         option.value = data[0][i];
@@ -155,5 +163,5 @@ btnGenerateRevision.addEventListener('click', () => {
 
 // clears user input inside table
 display_btnReset.addEventListener('click', () => {
-    section3_tableInputs.forEach(x => {x.reset()});
+    section3_tableInputs.forEach(x => {x.value = ''});
 })

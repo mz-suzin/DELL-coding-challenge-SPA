@@ -15,11 +15,13 @@ const mapOfTrucks = [
     [2,1,0], // 5001 < kg <= 6000
     [0,2,0], // 6001 < kg <= 8000
     [0,0,1], // 8001 < kg <= 9000
-    [0,0,1]  // 9001 < kg <= 10000
+    [0,0,1], // 9001 < kg <= 10000
+    [0,0,0]  // kg = 0;
 ]
 const truckPrice = [4.87, 11.92, 27.44];
 const truckName = ['PEQUENO', 'MÉDIO', 'GRANDE'];
 let cargoInformation = [];
+let totalCost = 0;
 
 function logDelivery(tableInputs, cities, originCity, items, data) {
     // dividing tableInputs.length by cities.length I'll have nº of item types
@@ -38,7 +40,9 @@ function logDelivery(tableInputs, cities, originCity, items, data) {
     createCargoObject(arrayOfTrucks, itemTypes, cities, originCity, items, tableInputs, data);
 
     // displays info for user
-    displayinfo(cities, tableInputs);
+    totalCost = displayinfo(cities, tableInputs);
+
+    return [cargoInformation, totalCost];
 }
 
 // function will assume cities are in order of proximity
@@ -59,6 +63,8 @@ function createCargoObject(trucks, itemTypes, cities, origin, items, tableInputs
 
         // get items to deliver at the current city
         itemsToDeliver = tableInputs.slice(j, j + itemTypes); // .slice doesnt includes end index
+
+        // builds up the object with stage information
         const trajectory = new cargoPrototype(newOrigin, cities[i], distance, newItems, itemsToDeliver, newTrucks);
 
         // saves the trajectory object into array
@@ -89,7 +95,7 @@ function cargoPrototype(origin2, destination2, distance2, items2, itemsToDeliver
     this.distance = distance2;
     this.items = items2;
     this.itemsToDeliver = itemsToDeliver2;
-    this.trucks = trucks2;
+    this.trucks = trucks2
 }
 
 // Based on the array mapOfTrucks, will define how many trucks of each modality is necessary
@@ -100,7 +106,8 @@ function defineTrucks(itemsForTrucks) {
     itemsForTrucks.forEach(item => {totalWeight += (item.weight*item.quantity)});
     let rest = totalWeight%10000;
     // lacking better resolution to this problem, I will brute force my way to it
-    if (rest <= 1000) arrayOfTrucks = [...mapOfTrucks[0]];
+    if (rest === 0) arrayOfTrucks = [...mapOfTrucks[8]];
+    else if (rest <= 1000) arrayOfTrucks = [...mapOfTrucks[0]];
     else if (rest <= 2000) arrayOfTrucks = [...mapOfTrucks[1]];
     else if (rest <= 4000) arrayOfTrucks = [...mapOfTrucks[2]];
     else if (rest <= 5000) arrayOfTrucks = [...mapOfTrucks[3]];
@@ -188,6 +195,8 @@ function displayinfo(cities, tableInputs) {
     stage.insertAdjacentElement("beforeend", p);
 
     displayLogs_Costs.insertAdjacentElement(('afterbegin'), stage);
+
+    return totalPrice;
 }
 
 // aux function to clean divs
