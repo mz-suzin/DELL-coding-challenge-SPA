@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUCRS/DELL IT Academy - mzsuzin</title>
-    <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=ncase.me/remember/.com">
+    <link rel="apple-touch-icon" sizes="180x180" href="./extra_resources/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./extra_resources/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./extra_resources/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./extra_resources/favicon_io/site.webmanifest">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
@@ -13,60 +16,33 @@
 <body>
     <!-- Side Navigation -->
     <div class="sidenav">
+        <div>
+            <p></p>
+            <p></p>
+            <a href="#section2">Consulta Trecho x Modalidade</a>
+            <a href="#section3">Cadastrar Transporte</a>
+            <a href="#section4">Dados Estatísticos</a>
+        </div>
+
+        <div>
+            <a href="#section1">Instruções de Utilização</a>
+            <a href="#section5">Contato</a>
+        </div>
+
         <div class="personal-info">
             <img src="img/mzsuzin.jpg" alt="Matheus Suzin">
             <p></p>
             <div class="text">
-                <h5>Matheus Suzin</h5>
+                <h5>Matheus Zimmermann</h5>
                 <h5>Wannabe Dell Employee</h5>
             </div>
             <p></p>
             <p></p>
             <p></p>
         </div>
-        <a href="#section1">Instruções de Utilização</a>
-        <a href="#section2">Consulta Trecho x Modalidade</a>
-        <a href="#section3">Cadastrar Transporte</a>
-        <a href="#section4">Dados Estatísticos</a>
-        <a href="#section5">Contato</a>
     </div>
     <!-- Project Section -->
     <div class="project">
-
-        <!-- Section 1 -->
-        <section id="section1" >
-            <h1>Instruções de Utilização</h1>
-
-            <p></p>
-
-            <h4>Consulta Trecho x Modalidade</h4>
-            <p>Utilize esta funcionalidade para consultar os custos e distâncias entre todas as cidades disponíves para transporte.</p>
-
-            <p></p>
-
-            <h4>Cadastrar Transporte</h4>
-            <ol>
-                <li>Adicione a origem e os destinos desejados na interface. 
-                    <br>Obs.: É necessário adicionar ao menos uma cidade de origem e uma cidade de destino.</li>
-                <li>Clique no botão 'inserir' para adicionar itens a serem transportados. 
-                    <br>Será aberta uma janela para adicionar a descrição, peso e quantidade do mesmo. 
-                    <br>Obs.: É necessário adicionar ao menos um item.</li>
-                <li>Clique em 'gerar' para visualizar o resumo do transporte configurado.</li>
-                <li>Configure os itens que deseja transportar para as respectivas cidades.
-                    <br>Obs.: É necessário que a soma das quantidade parcial de itens seja a mesma que a quantidade total.</li>
-                <li>Clique em 'Cadastrar Transporte' para visualizar as informações do trajeto configurado.</li>
-                <li>Clique em 'Salvar' para salvar os dados do trajeto.</li>
-            </ol>
-
-            <p></p>
-
-            <h4>Dados Estatísticos</h4>
-            <p>Utilize esta seção para visualizar os dados de todos os transportes cadastrados até o momento.</p>
-
-            <p></p>
-
-            <p>Para sair, feche a janela do seu navegador.</p>
-        </section>
 
         <!-- Section 2 -->
         <section id="section2">
@@ -92,11 +68,11 @@
 
                 <div class="section2_displayInfo">
                     <h4>Resultado</h4>
+                    <b><p id="section2_distance">Distância a ser percorrida: </p></b>
+                    <b><p id="section2_cost">Custo esperado: R$</p></b>
                     <p id="section2_originText">Origem: </p>
                     <p id="section2_destinationText">Destino: </p>
                     <p id="section2_truckType">Modalidade: </p>
-                    <p id="section2_distance">Distância a ser percorrida: </p>
-                    <p id="section2_cost">Custo esperado: R$</p>
                 </div>
             </div>
 
@@ -153,6 +129,8 @@
 
         </section>
 
+        
+
         <section id="section4">
             <h1>Dados Estatísticos</h1>
             <div hidden id="section4_showData">
@@ -165,14 +143,44 @@
                 <p id="section4_totalItems"></p>
             </div>
             <button type="button" class="btn btn-danger" id="section4_reset">Reset</button> 
+        </section> 
+        
+        <!-- Section 1 -->
+        <section id="section1" >
+            <h1>Instruções de Utilização</h1>
+
+            <p></p>
+
+            <h4>Consulta Trecho x Modalidade</h4>
+            <p>Utilize esta funcionalidade para consultar os custos e distâncias entre todas as cidades disponíves para transporte.</p>
+
+            <p></p>
+
+            <h4>Cadastrar Transporte</h4>
+            <ol>
+                <li>Adicione a origem e os destinos desejados na interface. 
+                    <br>Obs.: É necessário adicionar ao menos uma cidade de origem e uma cidade de destino.</li>
+                <li>Clique no botão 'inserir' para adicionar itens a serem transportados. 
+                    <br>Será aberta uma janela para adicionar a descrição, peso e quantidade do mesmo. 
+                    <br>Obs.: É necessário adicionar ao menos um item.</li>
+                <li>Clique em 'gerar' para visualizar o resumo do transporte configurado.</li>
+                <li>Configure os itens que deseja transportar para as respectivas cidades.
+                    <br>Obs.: É necessário que a soma das quantidade parcial de itens seja a mesma que a quantidade total.</li>
+                <li>Clique em 'Cadastrar Transporte' para visualizar as informações do trajeto configurado.</li>
+                <li>Clique em 'Salvar' para salvar os dados do trajeto.</li>
+            </ol>
+
+            <p></p>
+
+            <h4>Dados Estatísticos</h4>
+            <p>Utilize esta seção para visualizar os dados de todos os transportes cadastrados até o momento.</p>
+
+            <p></p>
+
+            <p>Para sair, feche a janela do seu navegador.</p>
+        </section>
 
 
-            
-        </section>        
-
-
-
-        <!-- Template for adding new sections -->
         <section id="section5">
             <h1>Obrigado pela oportunidade</h1>
             <div class="social-icons">

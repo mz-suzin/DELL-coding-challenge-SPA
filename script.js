@@ -1,3 +1,4 @@
+// Programa IT Academy – Processo Seletivo – Edição #18
 // Coded by Matheus Suzin
 // March, 2023
 
@@ -52,7 +53,6 @@ let totalCost = 0;
 
 
 // ********* Main Code *********
-
 getData().then(data => {
     // Instantiation of section 2 - Drop-down lists for the cities
     dropDownCities.forEach(list => {
@@ -166,6 +166,7 @@ btnGenerateRevision.addEventListener('click', () => {
 });
 
 // clears user input inside table
+// NOT WORKING - throws error when setting x.value - cannot create property value on string.
 display_btnReset.addEventListener('click', () => {
     section3_tableInputs.forEach(x => {x.value = ''});
 })

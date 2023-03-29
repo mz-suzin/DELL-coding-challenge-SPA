@@ -1,3 +1,4 @@
+// Programa IT Academy – Processo Seletivo – Edição #18
 // Coded by Matheus Suzin
 // March, 2023
 
@@ -36,7 +37,7 @@ let allData = {
 
 function saveToStatisticalData(cargoInformation, totalCost) {
     section4_showData.removeAttribute('hidden');
-    
+
     // straight through information
     allData.totalCost += totalCost;
     allData.numberOfTrucks += cargoInformation[0].trucks.reduce((a, b) => a + b, 0);

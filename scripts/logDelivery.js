@@ -1,5 +1,6 @@
+// Programa IT Academy – Processo Seletivo – Edição #18
 // Coded by Matheus Suzin
-// March, 2023.
+// March, 2023
 
 // get DOM elements
 const section3_logDelivery = document.getElementById("section3_logDelivery");

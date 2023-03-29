@@ -1,5 +1,6 @@
+// Programa IT Academy – Processo Seletivo – Edição #18
 // Coded by Matheus Suzin
-// March, 2023.
+// March, 2023
 
 // Get elements from DOM
 const display_originCity = document.getElementById('display_originCity');
@@ -139,6 +140,7 @@ function createTable(cities, items) {
     return tbl;
 }
 
+// get every element with class tableInputs and stores inside section3_tableInputs only the .values of those elements.
 function getTableInputs() {
     let section3_tableInputs = document.querySelectorAll('.tableInputs');
     let aux = [];

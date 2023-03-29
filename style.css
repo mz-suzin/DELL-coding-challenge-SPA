@@ -1,3 +1,6 @@
+/* Programa IT Academy – Processo Seletivo – Edição #18
+Coded by Matheus Suzin
+March, 2023 */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600&family=Source+Code+Pro&display=swap');
 
 :root {
@@ -35,6 +38,10 @@ h5 {
 }
 label {
 	font-weight: 600;
+}
+
+.boldText {
+	text-decoration: solid;
 }
 
 .project {
@@ -169,12 +176,15 @@ section {
 	background-color: var(--primary-variant);
 	overflow-x: hidden;
 	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
   }
 
 .sidenav a {
 	padding: 6px 8px 6px 16px;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 19px;
 	color: var(--background);
 	display: block;
 }
