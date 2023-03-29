@@ -23,7 +23,7 @@ function calculateSectionTwo(origin, destination, truck, data) {
     section2_originText.textContent = `Origem: ${origin}`;
     section2_destinationText.textContent = `Destino: ${destination}`;
     section2_truckType.textContent = `Modalidade: ${truck}`;
-    section2_distance.textContent = `Distância a ser percorrida:: ${distance}Km`;
+    section2_distance.textContent = `Distância a ser percorrida: ${distance}Km`;
     section2_cost.textContent = `Custo: R$${Intl.NumberFormat('pt-BR').format(cost*distance)}`;
 }
 

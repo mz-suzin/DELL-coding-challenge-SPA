@@ -6,6 +6,7 @@ const display_originCity = document.getElementById('display_originCity');
 const display_table = document.getElementById('display_table');
 const userAddedCities = document.getElementById('userAddedCities');
 const originCity = document.getElementById('section3_originCity');
+const tableInputs = document.getElementsByClassName('tableInputs');
 
 // This function will 
 // 1 - check if user provided enough information to register transportation
@@ -31,8 +32,7 @@ function generateRevision(items) {
     const table = createTable(cities, items);
     display_table.appendChild(table);
 
-    let section3_tableInputs = document.querySelectorAll('.tableInputs');
-    return [section3_tableInputs, cities, originCity.value];
+    return [cities, originCity.value];
 }
 
 // Checks if user provided enough information to register transportation
@@ -125,11 +125,11 @@ function createTable(cities, items) {
                 let td = tr.insertCell();
                 let input = document.createElement('input');
                 input.setAttribute('onclick', 'this.select()');
-                input.className = 'tableInputs';
+                input.className = 'tableInputs form-control';
                 input.id = `${items[j-1].description}`
                 input.value = 0;
                 input.type = 'number';
-                input.step = '50';
+                input.step = Math.ceil((items[j-1].quantity)/100);
                 td.appendChild(input);
             }
         }
@@ -139,4 +139,14 @@ function createTable(cities, items) {
     return tbl;
 }
 
-export default generateRevision;
+function getTableInputs() {
+    let section3_tableInputs = document.querySelectorAll('.tableInputs');
+    let aux = [];
+    for (let i = 0; i < section3_tableInputs.length; i++) {
+        aux.push(section3_tableInputs[i].value);
+    }
+    section3_tableInputs = aux;
+    return section3_tableInputs;
+}
+
+export {generateRevision, getTableInputs};

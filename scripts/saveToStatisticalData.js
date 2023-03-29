@@ -36,8 +36,7 @@ let allData = {
 
 function saveToStatisticalData(cargoInformation, totalCost) {
     section4_showData.removeAttribute('hidden');
-
-    console.log(totalCost);
+    
     // straight through information
     allData.totalCost += totalCost;
     allData.numberOfTrucks += cargoInformation[0].trucks.reduce((a, b) => a + b, 0);

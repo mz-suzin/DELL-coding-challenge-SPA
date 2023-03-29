@@ -24,14 +24,15 @@ let cargoInformation = [];
 let totalCost = 0;
 
 function logDelivery(tableInputs, cities, originCity, items, data) {
+    let itemTypes = [];
     // dividing tableInputs.length by cities.length I'll have nº of item types
-    let itemTypes = tableInputs.length/cities.length;
+    itemTypes = tableInputs.length/cities.length;
+
+    // data validation
+    // if(!checkTableInputs(items, itemTypes, cities)) return false;
 
     // clears previous information
     cargoInformation = [];
-
-    // data validation
-    if(!checkTableInputs(items, itemTypes, cities)) return false;
 
     // define truck modalities
     let arrayOfTrucks = defineTrucks(items);
@@ -139,9 +140,9 @@ function displayinfo(cities, tableInputs) {
         stage.id = `stage${i+1}`;
 
         // title for current stage
-        let h5 = document.createElement('h5');
-        h5.innerHTML = `Etapa ${i+1}:`
-        stage.appendChild(h5);
+        let h4 = document.createElement('h4');
+        h4.innerHTML = `Etapa ${i+1}:`
+        stage.appendChild(h4);
 
         // display path
         let p = document.createElement('p');
@@ -211,7 +212,11 @@ function removeElements(parent) {
 // 2. checking if final value is the same as the total input by user
 function checkTableInputs(items, n, cities) {
     let isCorrect = true; 
+
+    if (n === 0) return false;
+
     let sumQuantity = Array(n).fill(0);
+    
     // iterate through all items
     for (let i = 0; i < items.length; i++) {
         const userInputPerItem = document.querySelectorAll(`#${items[i].description}`);
@@ -234,4 +239,4 @@ function checkTableInputs(items, n, cities) {
     return isCorrect;
 }
 
-export default logDelivery;
+export { logDelivery, checkTableInputs };

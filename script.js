@@ -5,8 +5,8 @@
 import getData from "./scripts/getData.js";
 import calculateSectionTwo from "./scripts/calculateSectionTwo.js";
 import addItem from "./scripts/addItem.js";
-import generateRevision from "./scripts/generateRevision.js";
-import logDelivery from "./scripts/logDelivery.js";
+import {generateRevision, getTableInputs} from "./scripts/generateRevision.js";
+import {logDelivery, checkTableInputs} from "./scripts/logDelivery.js";
 import saveToStatisticalData from "./scripts/saveToStatisticalData.js";
 
 // Get elements from DOM
@@ -38,9 +38,9 @@ let section3_tableInputs = [];
 
 // General variables declaration
 const truckInfo = [
-    'Caminhão Pequeno (1TON Max)',
-    'Caminhão Médio (4TON Max)',
-    'Caminhão Grande (10TON Max)'
+    'Caminhão Pequeno (Máx: 1 t.)',
+    'Caminhão Médio (Máx: 4 t.)',
+    'Caminhão Grande (Máx: 10 t.)'
 ];
 let items = [];
 let cities = [];
@@ -71,14 +71,18 @@ getData().then(data => {
     // first the function cleans the table input data, only sending the .value.
     // flag checks if the cleaning action has already been performed, in case user clicks twice on btnConfirm
     display_btnConfirm.addEventListener('click', () => {
-        if (!tableInputsCleanedFlag){
-            let aux = [];
-            for (let i = 0; i < section3_tableInputs.length; i++) {
-                aux.push(section3_tableInputs[i].value);
-                tableInputsCleanedFlag = true;
-            }
-            section3_tableInputs = aux;
+        section3_tableInputs = getTableInputs();
+        if(!section3_tableInputs.length){
+            alert('Quantidade de itens inválida');
+            return false;
         }
+
+        let n = section3_tableInputs.length/cities.length;
+        if(!checkTableInputs(items, n, cities)){
+            alert('Quantidade de itens inválida');
+            return false;
+        }
+
         [lastCargoInfo, totalCost] = logDelivery(section3_tableInputs, cities, originCity, items, data);
     })
 
@@ -158,7 +162,7 @@ btnAddItem.addEventListener('click', () => {
 btnGenerateRevision.addEventListener('click', () => {
     tableInputsCleanedFlag = false;
     section3_revision.removeAttribute('hidden');
-    [section3_tableInputs, cities, originCity] = generateRevision(items);
+    [cities, originCity] = generateRevision(items);
 });
 
 // clears user input inside table

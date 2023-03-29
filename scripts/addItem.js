@@ -25,25 +25,28 @@ function addItem(btnAddItem) {
         let div = document.createElement('div');
         div.className = 'form-group';
         let input = document.createElement('input');
-        input.type = 'text';
         input.className = 'form-control';
         input.id = `addItem${i}`;
         switch (i) {
             case 0: 
                 input.placeholder = 'Descrição';
                 input.maxLength = "15";
+                input.type = 'text';
                 // teste
                 // input.value='Banana'
                 break;
             case 1:
                 input.placeholder = 'Peso do item (Kg)';
                 input.maxLength = "4";
+                input.type = 'number';
+                input.step='.5';
                 // teste
                 // input.value='1'
                 break;
             case 2:
                 input.placeholder = 'Quantidade (Unidades)';
                 input.maxLength = "10";
+                input.type = 'number';
                 // teste
                 // input.value='500'
                 break;
